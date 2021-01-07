@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" id="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="applicable-device" content="mobile">
+    <meta name="robots" content="all">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="chinaunicom">
+    <meta name="Copyright" content="chinaunicom">
+    <meta name="applicable-device" content="mobile">
+    <meta name="Description" content="青春有你 未来有我" />
+    <meta name="Keywords" content="青春有你 未来有我" />
+    <title>青春有你 未来有我</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <script>
+        var screenState = 'portrait';
+        var defaultFontSize = 0;
+        var rem = 0;
+        (function (win, doc) {
+            function setDefaultFontSize() {
+                var d = window.document.createElement('div')
+                d.style.width = '1rem'
+                d.style.display = "none"
+                var head = window.document.getElementsByTagName('head')[0]
+                head.appendChild(d)
+                defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'))
+            }
+
+            function setFont() {
+                var designWidth = 640;
+                var rem2px = 100;
+                if (document.documentElement.clientWidth < 500) {
+                    screenState = 'portrait'
+                    if (document.body != null) {
+                        document.body.className = 'portrait'
+                    }
+                    var designWidth = 640;
+                } else {
+                    screenState = 'landscape'
+                    if (document.body != null) {
+                        document.body.className = 'landscape'
+                    }
+                    var designWidth = 1040;
+                }
+                if (/iPad|iPod/i.test(navigator.userAgent) && document.documentElement.clientWidth < document.documentElement.clientHeight) {
+                    screenState = 'portrait'
+                    if (document.body != null) {
+                        document.body.className = 'portrait'
+                    }
+                    var designWidth = 640;
+                }
+                document.documentElement.style.fontSize = window.innerWidth / designWidth * rem2px / defaultFontSize * 100 + '%';
+                rem = window.innerWidth / designWidth * rem2px
+
+            }
+            setDefaultFontSize()
+            setFont()
+            if (!win.addEventListener) return;
+            win.addEventListener('resize', setFont, false)
+        })(window, document)
+    </script>
+</head>
+
+<body>
+    <!-- loadingPage -->
+    <div class="loadingPage">
+        <div class="loading_main">
+            <div class="loadGif">
+                <div class="loading_ani">
+                    <img src="img/load_1.png" alt="" class="load_1">
+                    <img src="img/load_2.png" alt="" class="load_2">
+                </div>
+            </div>
+            <div class="loading_progress">
+                <div class="loading"></div>
+                <img src="img/loadImg.png" alt="红旗" class="loadImg">
+                <span>你的小可爱正在赶来的路上……</span>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <!-- firstPage -->
+        <section class="page page_1 blur" data-page=1>
+            <div class="page_main">
+                <div class="avatorArea">
+                    <img src="img/text.png" alt="" class="avatorText">
+                    <img src="img/avator.png" alt="" class="avator">
+                </div>
+                <div class="controlArea">
+                    <div class="controlChild">
+                        <div class="conrtrolIcon">
+                            <img src="./img/cut.png" alt="">
+                        </div>
+                        <img src="img/txt1.png" alt="挂断" class="controlTxt">
+                    </div>
+                    <div class="controlChild ani">
+                        <div class="conrtrolIcon goVideo">
+                            <img src="img/green.png" alt="">
+                            <img src="img/video.png" alt="" class="controlVideo">
+                        </div>
+                        <img src="img/txt2.png" alt="接听" class="controlTxt">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- secondPage -->
+        <section class="page page_2 blur" data-page=2>
+            <div class="page_main">
+                <div class="slogan">
+                    <img src="img/videoTitle.png" alt="" class="videoTitle">
+                </div>
+                <div class="videoHome">
+                    <video id="videoPlayer" webkit-playsinline="true"  playsinline="true" x-webkit-airplay="true"
+                        x5-video-player-type="h5" src="img/video.mp4"
+                        x5-video-player-fullscreen="true" preload="auto" poster="img/videoPoster.png"></video>
+                    <span class="playIcon on"></span>
+                </div>
+                <div class="otherDeco">
+                    <img src="img/txt3.png" alt="" class="other_txt">
+                    <img src="img/icon.png" alt="" class="other_icon">
+                </div>
+            </div>
+        </section>
+
+        <!-- finalPage -->
+        <section class="page page_3 blur" id="finalPage" data-page=3>
+            <div class="page_main">
+                <div class="sloganBox">
+                    <img src="img/5gIcon.png" alt="" class="sloganBoxIcon">
+                    <img src="img/logo.png" alt="" class="sloganBoxLogo">
+                </div>
+                <img src="img/sloganFinal.png" alt="" class="sloganFinal">
+                <img src="img/role.png" alt="" class="role">
+                <img src="img/ball3.png" alt="" class="ball3 pa">
+                <img src="img/ball2.png" alt="" class="ball2 pa">
+                <img src="img/mi.png" alt="" class="mi pa">
+                <img src="img/ball.png" alt="" class="ball pa">
+                <div class="clickArea pa">
+                    <img src="img/txt4.png" alt="" class="txt4">
+                    <a href="https://vip.17wo.cn/5Gn/?ADTAG=qt1" class="linkBtn"></a>
+                    <!-- <img src="img/btn.png" alt="" class="linkBtn"> -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+ 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/index.js?v=3"></script> 
+
+    <script>
+        var _wxData = {
+            shareTitle: "广东联通官宣！",
+            shareDesc: "5Gn未来会员校园星推广金子涵，来了！",
+            shareLink: location.href.split("#")[0],
+            shareImgUrl: '//img.intech.gdinsight.com/wk/al/images/share.jpg'
+        };
+    </script>
+    <script src="//auth.new.gdinsight.com/wxShare_digital.js?v=16.0"></script>
+
+</body>
+
+</html>
+
+<script>
+
+
+</script>
